@@ -10,5 +10,5 @@ fn main() {
     let mut command = String::new();
     io::stdin().read_line(&mut command).unwrap();
 
-    println!("read from terminal {}", command)
+    println!("{} : command not found", command.trim())
 }
