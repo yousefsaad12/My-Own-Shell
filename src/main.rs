@@ -12,6 +12,9 @@ fn main() {
         let mut command = String::new();
         io::stdin().read_line(&mut command).unwrap();
 
+        if command == "exit" {
+            return;
+        }
         println!("{}: command not found", command.trim())
     }
 }
