@@ -25,7 +25,7 @@ fn main() {
             }
         }
 
-        if command == "echo" {
+        else if command == "echo" {
             println!("{}", text)
         } else if command == "exit" {
             return;
