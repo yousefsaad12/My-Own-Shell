@@ -5,7 +5,7 @@ fn main() {
     // TODO: Uncomment the code below to pass the first stage
 
     loop {
-        print!("$ ");
+        print!("$");
         io::stdout().flush().unwrap();
 
         let mut line = String::new();
