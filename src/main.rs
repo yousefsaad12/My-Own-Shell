@@ -19,7 +19,7 @@ fn main() {
 
         if command == "type" {
 
-            if text == "echo" || text == "exit" 
+            if text == "echo" || text == "exit" || text == "type"
             {
                 println!("{} is a shell builtin", text)
             }
