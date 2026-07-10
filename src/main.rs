@@ -4,7 +4,7 @@ use std::io::{self, Write};
 fn main() {
     // TODO: Uncomment the code below to pass the first stage
 
-    
+    loop {
         print!("$ ");
         io::stdout().flush().unwrap();
 
@@ -20,6 +20,10 @@ fn main() {
         if command == "echo" {
             println!("{}", text)
         };
- 
-    return ;
+
+        if command == "exit" {
+            return;
+        }
+        
+    }
 }
