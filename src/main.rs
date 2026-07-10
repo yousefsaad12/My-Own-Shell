@@ -23,6 +23,7 @@ fn main() {
             {
                 println!("{} is a shell builtin", text)
             }
+            else println!("{}: not found", text)
         }
 
         else if command == "echo" {
