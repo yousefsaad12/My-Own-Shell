@@ -19,11 +19,10 @@ fn main() {
 
         if command == "echo" {
             println!("{}", text)
-        };
-
-        if command == "exit" {
+        } else if command == "exit" {
             return;
+        } else {
+            println!("command not found")
         }
-        
     }
 }
