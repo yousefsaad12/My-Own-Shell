@@ -22,7 +22,7 @@ fn main() {
         } else if command == "exit" {
             return;
         } else {
-            println!("command not found")
+            println!("{} command not found", command)
         }
     }
 }
