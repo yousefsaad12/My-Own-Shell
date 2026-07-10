@@ -17,6 +17,14 @@ fn main() {
             None => (line, ""),
         };
 
+        if command == "type" {
+
+            if text == "echo" || text == "exit" 
+            {
+                println!("{} is a shell builtin", text)
+            }
+        }
+
         if command == "echo" {
             println!("{}", text)
         } else if command == "exit" {
