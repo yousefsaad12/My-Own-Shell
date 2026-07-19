@@ -4,7 +4,7 @@ use std::process::{Command, Stdio};
 
 pub fn run(path: &Path, command: &str, args: Vec<&str>) {
     let status = Command::new(path)
-        .arg0(&[command])
+        .arg0(&command)
         .args(args)
         .stdout(Stdio::inherit())
         .stderr(Stdio::inherit())
