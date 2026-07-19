@@ -1,6 +1,7 @@
 use std::io::{self, Write};
 use crate::commands::{echo, exit, type_cmd};
-
+mod path_utils;
+mod executor;
 pub fn run() {
     loop {
         print!("$ ");
@@ -19,7 +20,12 @@ pub fn run() {
             "exit" => exit::run(),
             "type" => type_cmd::run(args.first().copied().unwrap_or("")),
             "" => {}
-            _ => println!("{}: command not found", command),
+            _ =>{
+                match path_utils::find_exe(command){
+                    Some(path) => executor::run(&path, &args),
+                    None => println!("Command not found: {}", command),
+                }
+            }
         }
     }
 }
