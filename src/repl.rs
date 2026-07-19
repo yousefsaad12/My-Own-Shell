@@ -1,7 +1,8 @@
 use std::io::{self, Write};
 use crate::commands::{echo, exit, type_cmd};
-mod path_utils;
-mod executor;
+use crate::path_utils;
+use crate::executor;
+
 pub fn run() {
     loop {
         print!("$ ");
