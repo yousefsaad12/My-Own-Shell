@@ -1,4 +1,4 @@
-use crate::path_utils::find_exe;
+use crate::external::finder::find_exe;
 
 pub fn run(cmd: &str) {
     if cmd == "echo" || cmd == "exit" || cmd == "type" {
