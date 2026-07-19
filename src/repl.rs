@@ -1,7 +1,6 @@
 use std::io::{self, Write};
 use crate::commands::{echo, exit, type_cmd};
-use crate::path_utils;
-use crate::executor;
+use crate::external::{finder, executor};
 
 pub fn run() {
     loop {
@@ -22,7 +21,7 @@ pub fn run() {
             "type" => type_cmd::run(args.first().copied().unwrap_or("")),
             "" => {}
             _ =>{
-                match path_utils::find_exe(command){
+                match finder::find_exe(command){
                     Some(path) => executor::run(&path,command, args),
                     None => println!("{}: command not found", command),
                 }
