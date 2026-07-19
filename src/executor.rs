@@ -2,7 +2,7 @@
 use std::path::Path;
 use std::process::{Command, Stdio};
 
-pub fn run(path: &Path, args: &[String]) {
+pub fn run(path: &Path, args: Vec<&str>) {
     let status = Command::new(path)
         .args(args)
         .stdout(Stdio::inherit())
