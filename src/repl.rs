@@ -23,7 +23,7 @@ pub fn run() {
             "" => {}
             _ =>{
                 match path_utils::find_exe(command){
-                    Some(path) => executor::run(&path, args),
+                    Some(path) => executor::run(&path,command, args),
                     None => println!("Command not found: {}", command),
                 }
             }
