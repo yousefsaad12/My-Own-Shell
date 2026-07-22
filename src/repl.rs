@@ -1,5 +1,5 @@
 use std::io::{self, Write};
-use crate::commands::{echo, exit, type_cmd, pwd};
+use crate::commands::{echo, exit, type_cmd, pwd, cd};
 use crate::external::{finder, executor};
 
 pub fn run() {
@@ -20,6 +20,7 @@ pub fn run() {
             "exit" => exit::run(),
             "type" => type_cmd::run(args.first().copied().unwrap_or("")),
             "pwd" => pwd::run(),
+            "cd" => cd::run(&args),
             "" => {}
             _ =>{
                 match finder::find_exe(command){
