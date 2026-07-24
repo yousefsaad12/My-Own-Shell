@@ -9,8 +9,12 @@ pub fn run(args: &[&str]) {
         return;
     }
 
-    let current_dir = env::current_dir().unwrap();
-    let new_path = current_dir.join(args[0]);
+    let new_path = if args[0] == "~" {
+        std::env::home_dir().unwrap()
+    } else {
+        let current_dir = env::current_dir().unwrap();
+        current_dir.join(args[0])
+    };
 
     if new_path.exists() {
         env::set_current_dir(new_path).unwrap();
